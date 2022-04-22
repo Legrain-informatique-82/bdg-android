@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/activity_main_drawer_accueil"
+            android:icon="@drawable/ic_action_accueil"
+            android:title="Accueil" />
+        <item
+            android:id="@+id/activity_main_drawer_tiers"
+            android:icon="@drawable/ic_action_tiers"
+            android:title="Tiers" />
+        <item
+            android:id="@+id/activity_main_drawer_articles"
+            android:icon="@drawable/ic_action_articles"
+            android:title="Articles" />
+    </group>
+
+    <item android:title="Scan">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_scan_preparation"
+                    android:icon="@drawable/ic_action_preparation"
+                    android:title="Préparation" />
+                <item
+                    android:id="@+id/activity_main_drawer_scan_inventaire"
+                    android:enabled="false"
+                    android:icon="@drawable/ic_action_inventaire"
+                    android:title="Inventaire" />
+<!--                android:icon="@drawable/ic_action_inventaire"-->
+                <item
+                    android:id="@+id/activity_main_drawer_scan_fabrication"
+                    android:enabled="false"
+                    android:icon="@drawable/ic_action_fabrication"
+                    android:title="Fabrication" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:title="Documents"
+        android:visible="false">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_bonliv"
+                    android:icon="@drawable/ic_action_bonliv"
+                    android:title="Bon de livraison" />
+                <!--                <item-->
+                <!--                    android:id="@+id/activity_main_drawer_bonrecption"-->
+                <!--                    android:icon="@drawable/ic_action_bonreception"-->
+                <!--                    android:title="Bon de réception" />-->
+                <!--                <item-->
+                <!--                    android:id="@+id/activity_main_drawer_flash"-->
+                <!--                    android:icon="@drawable/ic_action_codebarre"-->
+                <!--                    android:title="Flash" />-->
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Configuration">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_preferences"
+                    android:icon="@drawable/ic_action_preferences"
+                    android:title="Préférences" />
+                <!--<item-->
+                    <!--android:id="@+id/activity_main_drawer_settings"-->
+                    <!--android:icon="@drawable/ic_launcher_background"-->
+                    <!--android:title="Paramètres" />-->
+            </group>
+        </menu>
+    </item>
+
+
+</menu>

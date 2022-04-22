@@ -1,0 +1,396 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_valide_bl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:text="Validation du BL"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/cardView3"
+        android:layout_marginStart="42dp" />
+
+    <Button
+        android:id="@+id/btnEnvoyerBLVersBdG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="48dp"
+        android:text="Envoyer BL vers BdG" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="113dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvLignesBL"
+        android:layout_width="match_parent"
+        android:layout_height="752dp"
+        android:layout_below="@+id/cardView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="51dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:id="@+id/cardView3"
+        android:layout_marginStart="42dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="20dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvValideNomTiers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/etValideAdresse"
+                        android:layout_below="@+id/textView"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:text="nom tiers"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etValideAdresse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/etValideCodePostal"
+                        android:layout_below="@+id/tvValideNomTiers"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Adresse Livraison"
+                        android:inputType="textPersonName" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etValideCodePostal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/etValideAdresse"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Code postal"
+                        android:inputType="textPersonName" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etValideVille"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/etValideCodePostal"
+                        android:layout_below="@+id/etValideCodePostal"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Ville"
+                        android:inputType="textPersonName" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etValidePays"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/etValideVille"
+                        android:layout_below="@+id/etValideVille"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Pays"
+                        android:inputType="textPersonName" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:layout_alignTop="@+id/cardView3"
+        android:layout_marginStart="26dp"
+        android:layout_toEndOf="@+id/cardView3">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="257dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="20dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLabelDateBL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="Date" />
+
+                    <EditText
+                        android:id="@+id/etDateBL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView"
+                        android:layout_toEndOf="@+id/etValideAdresse"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:hint="Date Bon Livraison"
+                        android:inputType="date" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLabelTarif"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="Tarif" />
+
+                    <Spinner
+                        android:id="@+id/spinnerTarif"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/linearLayout"
+                        android:layout_toEndOf="@+id/textView"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLabelRemise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="Remise" />
+
+                    <TextView
+                        android:id="@+id/tvRemise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="remise" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cbTTC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/spinnerTarif"
+                        android:layout_below="@+id/linearLayout"
+                        android:text="Facturation TTC" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLabelCommercial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="Commercial" />
+
+                    <Spinner
+                        android:id="@+id/spinnerCommercial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/linearLayout"
+                        android:layout_toEndOf="@+id/textView" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLabelTxCommission"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="Tx Com." />
+
+                    <TextView
+                        android:id="@+id/tvTxCommision"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="txCommission" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLabelNbColis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="Nombre de colis" />
+
+                    <TextView
+                        android:id="@+id/tvNbColis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:text="nbColis" />
+                </LinearLayout>
+
+            </TableRow>
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

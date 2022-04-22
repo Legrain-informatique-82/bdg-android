@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+<!--        <variable name="article" type="fr.legrain.bdg.api.client.dto.ArticleDTO"/>-->
+        <variable name="article" type="fr.legrain.bdg.db.room.Article"/>
+    </data>
+
+<LinearLayout
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:divider="?attr/dividerHorizontal"
+    android:showDividers="middle"
+    android:layout_height="match_parent">
+
+
+
+
+    <TextView
+        android:text="@{article.codeArticle}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_weight="1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="@{article.libellecArticle}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_weight="1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@{article.codeFamille}"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+</LinearLayout>
+</layout>

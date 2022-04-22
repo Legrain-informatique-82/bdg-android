@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="ligneFlash" type="fr.legrain.bdg.api.client.dto.LigneFlashDTO"/>
+    </data>
+
+<LinearLayout
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:divider="?attr/dividerHorizontal"
+    android:showDividers="middle"
+    android:layout_height="match_parent">
+
+
+
+
+    <!--<TextView-->
+        <!--android:text="@{ligneFlash.numLigneLDocument}"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/textView"-->
+        <!--android:layout_weight="1"-->
+        <!--android:textSize="18sp" />-->
+
+    <TextView
+        android:text="@{ligneFlash.codeArticle}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_weight="1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="@{ligneFlash.libLDocument}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_weight="1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="@{ligneFlash.numLot}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView54"
+        android:layout_weight="1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@{ligneFlash.qteLDocument.toString()}"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="@{ligneFlash.codeBarreLu}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView68"
+        android:layout_weight="1"
+        android:textSize="18sp" />
+</LinearLayout>
+</layout>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:clickable="true"
+        android:focusableInTouchMode="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lvLignesBL"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <Button
+            android:id="@+id/btnValiderBL"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_bt_terminer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Terminer" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etCodeBarre"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvCodeBarre"
+                        android:ems="10"
+                        android:hint="Code barre" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true" />
+
+                    <Button
+                        android:id="@+id/btnScan"
+                        android:layout_width="40dp"
+                        android:layout_height="33dp"
+                        android:layout_row="0"
+                        android:background="@drawable/codebarre" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvCodeArticle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etCodeBarre"
+                    android:layout_alignStart="@+id/tvLibelleArticle"
+                    tools:text="codeArticle" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvLibelleArticle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvCodeArticle"
+                    android:layout_alignEnd="@+id/tvCodeBarre"
+                    tools:text="libelleArticle" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvCodeBarre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Code barre" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvQuantite"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvLibelleArticle"
+                        android:layout_alignStart="@+id/tvLibelleArticle"
+                        android:text="Quantité" />
+
+                    <EditText
+                        android:id="@+id/etQuantite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/tvQuantite"
+                        android:layout_alignStart="@+id/btnValiderLigne"
+                        android:layout_alignBottom="@+id/tvQuantite"
+                        android:ems="10"
+                        android:hint="Quantité"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <!--<TableRow-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tvUnite"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignStart="@+id/tvQuantite"-->
+            <!--android:layout_below="@+id/etQuantite"-->
+            <!--android:text="Unité" />-->
+
+            <!--<EditText-->
+            <!--android:id="@+id/etUnite"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignBaseline="@+id/tvUnite"-->
+            <!--android:layout_alignBottom="@+id/tvUnite"-->
+            <!--android:layout_alignStart="@+id/etQuantite"-->
+            <!--android:ems="10"-->
+            <!--android:hint="Unité"-->
+            <!--android:inputType="textPersonName" />-->
+            <!--</LinearLayout>-->
+
+            <!--</TableRow>-->
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLot"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:text="Lot" />
+
+                    <Spinner
+                        android:id="@+id/spinnerLot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tvNumLot"
+                        android:layout_width="141dp"
+                        android:layout_height="wrap_content"
+                        tools:text="numLot"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/tvNomDuClient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="nom du client"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnValiderLigne"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_bt_suivant"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Suivant" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

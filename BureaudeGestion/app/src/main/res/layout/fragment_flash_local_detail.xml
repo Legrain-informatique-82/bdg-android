@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="flash" type="fr.legrain.bdg.db.room.Flash"/>
+        <variable name="fragment" type="fr.legrain.bdg.ui.flash.FlashLocalDetailFragment" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnEnvoyerUnFlashVersBdg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_bt_transferer_vers_le_serveur"
+            android:onClick="@{(view) -> fragment.onEnvoyerUnFlashVersBdgClick(view)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Envoyer vers BDG" />
+
+        <Button
+            android:id="@+id/btnSupprimerFlashLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/croix_suppression"
+            android:onClick="@{(view) -> fragment.onSupprimerClick(view)}"
+            android:text="Supprimer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEnvoyerUnFlashVersBdg" />
+
+        <ListView
+            android:id="@+id/listViewLigneFlash"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dateDocument" />
+
+        <TextView
+            android:id="@+id/tv_libelleDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@{flash.libelleFlash}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_codeDocument"
+            tools:text="libelle" />
+
+        <TextView
+            android:id="@+id/tv_codeDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@{flash.codeFlash}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="code document" />
+
+        <TextView
+            android:id="@+id/tv_dateDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:autoLink="phone"
+            android:date="@{flash.dateFlash}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_libelleDocument"
+            tools:text="date document" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

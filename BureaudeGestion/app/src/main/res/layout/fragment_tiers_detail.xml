@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+<!--        <variable name="tiers" type="fr.legrain.bdg.api.client.dto.TiersDTO"/>-->
+        <variable name="tiers" type="fr.legrain.bdg.db.room.Tiers"/>
+        <variable name="fragment" type="fr.legrain.bdg.ui.tiers.TiersDetailFragment" />
+    </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_nomTiers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="@{tiers.nomTiers}"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_codeTiers"
+                tools:text="nom" />
+
+            <TextView
+                android:id="@+id/tv_adresseEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:autoLink="email"
+                android:text="@{tiers.adresseEmail}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/picto_email"
+                tools:text="adresse email" />
+
+            <TextView
+                android:id="@+id/tv_adresseWeb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:autoLink="web"
+                android:text="@{tiers.adresseWeb}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerEmail"
+                tools:text="adresse web" />
+
+            <TextView
+                android:id="@+id/tv_numeroTelephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:autoLink="phone"
+                android:text="@{tiers.numeroTelephone}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/picto_telephone"
+                tools:text="telephone" />
+
+            <TextView
+                android:id="@+id/tv_codeTiers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="@{tiers.codeTiers}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="code tiers" />
+
+            <TextView
+                android:id="@+id/tv_adresse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:autoLink="map"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{(view) -> fragment.onAdresseClick(view)}"
+                android:text="@{tiers.getAdresseComplete()}"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nomTiers"
+                tools:text="adresse" />
+
+            <View
+                android:id="@+id/dividerAdresse"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_adresse" />
+
+            <View
+                android:id="@+id/dividerTel"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_numeroTelephone" />
+
+            <View
+                android:id="@+id/dividerEmail"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_adresseEmail" />
+
+            <ImageView
+                android:id="@+id/picto_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerTel"
+                app:srcCompat="@drawable/picto_envoi_mail" />
+
+            <ImageView
+                android:id="@+id/picto_telephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerAdresse"
+                app:srcCompat="@drawable/picto_telephone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--            android:text="@{tiers.adresse1Adresse!=null?tiers.adresse1Adresse:''+'\n'+tiers.adresse2Adresse+' '+tiers.adresse3Adresse+' '+tiers.codepostalAdresse+' '+tiers.villeAdresse+' '+tiers.paysAdresse}" -->
+
+
+</layout>
